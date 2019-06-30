@@ -28,4 +28,4 @@ USER appuser
 EXPOSE 5000
 
 # Specify the command to run.
-CMD gunicorn --bind 0.0.0.0:5000 devopswebhku:app
+CMD ["gunicorn","--bind","0.0.0.0:5000","devopswebhku:app"]
