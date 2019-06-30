@@ -1,0 +1,33 @@
+# Get the latest OS image.
+FROM alpine:latest
+
+# Install python and pip
+RUN apk add --no-cache --update python3 py3-pip bash
+
+# Set the working directory.
+ARG APPDIR="/devopswebhku/"
+WORKDIR ${APPDIR}
+
+# Set the FLASK_APP environment variable.
+ENV FLASK_APP devopswebhku.py
+
+# Copy over the application files.
+COPY config.py devopswebhku.py requirements.txt .env ${APPDIR}
+COPY app app
+COPY migrations migrations
+COPY tests_pytests tests_pytests
+COPY tests_unittests tests_unittests
+
+# Install dependencies.
+RUN pip3 install --no-cache-dir -q -r requirements.txt
+
+# Run the image as a non-root user.
+RUN adduser -D appuser
+RUN chown -R appuser:appuser ${APPDIR}
+USER appuser
+
+# Inform Docker that the container listens on port 5000.
+EXPOSE 5000
+
+# Specify the command to run.
+CMD gunicorn --bind 0.0.0.0:5000 devopswebhku:app

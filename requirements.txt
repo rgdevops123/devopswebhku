@@ -1,0 +1,11 @@
+coveralls
+coverage
+flake8
+flask
+flask_migrate
+flask_testing
+flask_wtf
+gunicorn
+nose2
+pytest
+python-dotenv
