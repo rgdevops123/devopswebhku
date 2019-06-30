@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/rgdevops123/devopswebhku.svg?branch=master)](https://travis-ci.com/rgdevops123/devopswebhku)
+[![Build Status](https://travis-ci.org/rgdevops123/devopswebhku.svg?branch=master)](https://travis-ci.org/rgdevops123/devopswebhku)
 [![Coverage Status](https://coveralls.io/repos/github/rgdevops123/devopswebhku/badge.svg?branch=master)](https://coveralls.io/github/rgdevops123/devopswebhku?branch=master)
 
 # devopswebhku
