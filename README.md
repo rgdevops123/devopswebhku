@@ -74,6 +74,7 @@
     $ sudo heroku stack:set container --app devopswebnl
     $ sudo heroku container:release web --app=devopswebnl
     
+           Tail logs.
     $ sudo heroku logs --tail --app=devopswebnl
 
 
