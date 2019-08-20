@@ -12,7 +12,7 @@ WORKDIR ${APPDIR}
 ENV FLASK_APP devopswebhku.py
 
 # Copy over the application files.
-COPY config.py devopswebhku.py requirements.txt .env ${APPDIR}
+COPY config.py devopswebhku.py requirements.txt ${APPDIR}
 COPY app app
 COPY migrations migrations
 COPY tests_pytests tests_pytests
