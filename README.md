@@ -70,12 +70,12 @@
        Using Heroku.
     $ heroku auth:login -i
     $ sudo heroku container:login
-    $ sudo heroku container:push web --app=devopswebnl
-    $ sudo heroku stack:set container --app devopswebnl
-    $ sudo heroku container:release web --app=devopswebnl
+    $ sudo heroku container:push web --app=devopswebhku
+    $ sudo heroku stack:set container --app devopswebhku
+    $ sudo heroku container:release web --app=devopswebhku
     
            Tail logs.
-    $ sudo heroku logs --tail --app=devopswebnl
+    $ sudo heroku logs --tail --app=devopswebhku
 
 
 ### ============================================
@@ -84,13 +84,17 @@
        -v                          ### Verbose
        --disable-pytest-warnings   ### Disable pytest warnings.
 
-    $ pytest -k unittests
-       -k <substring>              ### Only run tests with substring. 
-    $ nose2 -v
+    $ pytest -v --disable-pytest-warnings -k unittests
        -v                          ### Verbose
+       --disable-pytest-warnings   ### Disable pytest warnings.
+       -k <substring>              ### Only run tests with substring.
+
+    $ nose2 -v -s tests_unittests
+       -v                          ### Verbose
+       -s START_DIR                ### Directory to start discovery ('.' default)
 
 ### ============================================
-### Run coverage.py testing 123
+### Run coverage.py
     $ coverage run --source=./app -m pytest -v --disable-pytest-warnings
     $ coverage report
     $ coverage html
