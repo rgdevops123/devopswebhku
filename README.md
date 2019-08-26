@@ -68,18 +68,29 @@
         -p 5000:5000         ### Publish a container's port. hostPort:containerPort
 
        Using Heroku.
+    First create an application called "devopsweb" within the Heroku web console.
+    Under the deploy tab select "Deployment method" => "Container Registry"
+
+    $ sudo snap install --classic heroku
+    $ sudo apt -y install docker.io
+    $ git clone https://github.com/rgdevops123/devopswebhku.git
+    $ cd devopswebhku
     $ heroku auth:login -i
     $ sudo heroku container:login
-    $ sudo heroku container:push web --app=devopswebhku
-    $ sudo heroku stack:set container --app devopswebhku
-    $ sudo heroku container:release web --app=devopswebhku
+    $ sudo heroku container:push web --app=devopsweb
+    $ sudo heroku stack:set container --app devopsweb
+    $ sudo heroku container:release web --app=devopsweb
     
            Tail logs.
-    $ sudo heroku logs --tail --app=devopswebhku
+    $ sudo heroku logs --tail --app=devopsweb
+
+    GOTO: http://devopsweb.herokuapp.com
 
 
 ### ============================================
 ### Run Tests
+    $ sudo apt -y install python-pytest
+
     $ pytest -v --disable-pytest-warnings
        -v                          ### Verbose
        --disable-pytest-warnings   ### Disable pytest warnings.
