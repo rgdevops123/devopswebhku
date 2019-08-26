@@ -78,7 +78,6 @@
     $ heroku auth:login -i
     $ sudo heroku container:login
     $ sudo heroku container:push web --app=devopsweb
-    $ sudo heroku stack:set container --app devopsweb
     $ sudo heroku container:release web --app=devopsweb
     
            Tail logs.
