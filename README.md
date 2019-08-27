@@ -59,6 +59,7 @@
     $ flask run --host=0.0.0.0 --port=5000
 
        Using docker.
+      Use the Dockerfile.original original file.
     $ sudo docker build . -t rgdevops123/devopswebhku
     $ sudo docker run --env-file .env -d --rm --name devopswebhku -p 5000:5000 rgdevops123/devopswebhku
         --env-file .env      ### Use .env environment file.
