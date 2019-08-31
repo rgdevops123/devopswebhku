@@ -1,6 +1,9 @@
 # Get the latest OS image.
 FROM alpine:latest
 
+# Set Maintainer.
+LABEL maintainer "rgdevops123@gmail.com"
+
 # Install python and pip
 RUN apk add --no-cache --update python3 py3-pip bash
 
